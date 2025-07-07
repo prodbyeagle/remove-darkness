@@ -19,6 +19,7 @@ public class RemoveDarknessEffect implements ModInitializer {
 		ServerTickEvents.END_WORLD_TICK.register(world -> {
 			if (world instanceof ServerWorld serverWorld) {
 				for (ServerPlayerEntity player : serverWorld.getPlayers()) {
+					// check if player has the darkness effect, if yes remove that effect. that's it. lol.
 					if (player.hasStatusEffect(StatusEffects.DARKNESS)) {
 						player.removeStatusEffect(StatusEffects.DARKNESS);
 					}
